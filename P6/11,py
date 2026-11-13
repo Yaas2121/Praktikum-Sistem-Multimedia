@@ -1,0 +1,27 @@
+# 12. TABEL HASIL RESIZING
+# ==========================================
+print("\nTABEL HASIL RESIZING")
+print("-" * 65)
+print(
+ f"{'File':<22}"
+ f"{'Dimensi':<22}"
+ f"{'Ukuran (byte)':>18}"
+)
+print("-" * 65)
+print(
+ f"{'gibran.jpg':<22}"
+ f"{str(img.width) + ' x ' + str(img.height):<22}"
+ f"{ukuran_file_asli:>18,}"
+)
+for persentase in persentase_resize:
+ nama_file = folder_hasil / f"resize_{persentase}.jpg"
+ gambar = Image.open(nama_file)
+ ukuran = nama_file.stat().st_size
+ dimensi = f"{gambar.width} x {gambar.height}"
+ print(
+ f"{nama_file.name:<22}"
+ f"{dimensi:<22}"
+ f"{ukuran:>18,}"
+ )
+print("-" * 65)
+print("\nSEMUA PROSES PENGOLAHAN GAMBAR SELESAI.")
